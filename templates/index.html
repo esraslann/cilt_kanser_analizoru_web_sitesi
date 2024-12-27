@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Cilt Kanseri Teşhisi</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>CİLT KANSER TEŞHİSİ</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showContent('ciltKanseri')">Cilt Kanseri Nedir?</a></li>
+            <li><a href="javascript:void(0)" onclick="showContent('kanserTurleri')">Cilt Kanser Türleri</a></li>
+            <li><a href="javascript:void(0)" onclick="showContent('analizor')">Analizör</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Analizör Bölümü -->
+        <div class="upload-container" id="analizor">
+            <h2>Cilt Kanser Analizörü</h2>
+            <form id="uploadForm">
+                <input type="file" name="file" id="fileInput" accept="image/*" required>
+                <button type="submit">Analiz Et</button>
+            </form>
+            <div id="error-message" style="display: none; color: red; font-weight: bold; margin-top: 10px;">
+                <!-- Hata mesajları burada görünecek -->
+            </div>
+            <div id="result">
+                <p id="prediction" style="display:none;"></p>
+                <img id="uploadedImage" src="/assets/kanser2.jpeg" alt="Uploaded Image">
+                <p id="info-box" style="display:none; margin-top: 15px; color: #333; font-size: 16px; font-weight: bold;"></p>
+            </div>
+            
+        </div>
+
+        <!-- Cilt Kanseri Nedir Bölümü -->
+        <div class="info-box" id="ciltKanseri" style="display:none;">
+            <h2>Cilt Kanseri Nedir?</h2>
+            <p>Cilt kanseri, ciltteki hücrelerin kontrolsüz bir şekilde büyümesi ve çoğalması sonucu gelişen malign bir hastalıktır. Cilt kanseri, dünya genelinde en yaygın görülen kanser türüdür ve genellikle aşırı güneşe maruz kalma, ultraviyole (UV) ışınları gibi çevresel faktörler tarafından tetiklenir. Deri, vücudun en büyük organıdır ve dış etkenlere en fazla maruz kalan organ olma özelliğine sahiptir. Bu nedenle, cilt kanseri genellikle uzun süreli ve tekrarlayan güneş ışığına maruz kalma sonucu gelişir.
+
+                Cilt kanseri, genellikle üç ana türde görülür: bazal hücreli karsinom (BCC), skuamöz hücreli karsinom (SCC) ve malign melanom. Bu türlerin her biri farklı klinik özelliklere, risk faktörlerine ve tedavi yöntemlerine sahiptir. Cilt kanseri genellikle erken evrelerinde tedavi edilebilirken, hastalık ilerledikçe tedavi süreci daha zorlayıcı hale gelebilir.
+                
+                Cilt kanserinin en yaygın risk faktörü, güneş ışığına aşırı maruz kalmaktır. Ancak genetik faktörler, bağışıklık sistemi bozuklukları, açık ten rengi, yaş ve geçmişteki cilt yaralanmaları gibi diğer etkenler de bu hastalığın gelişimine katkıda bulunabilir.</p>
+        </div>
+
+        <!-- Cilt Kanseri Türleri Bölümü -->
+        <div class="info-box" id="kanserTurleri" style="display:none;">
+            <h2>Cilt Kanseri Türleri</h2>
+            <p>Cilt kanseri, genellikle üç ana türe ayrılır: bazal hücreli karsinom (BCC), skuamöz hücreli karsinom (SCC) ve malign melanom. Ancak, bazı cilt hastalıkları ve lezyonlar da kanser benzeri belirtiler gösterebilir. Bu bağlamda, AKIEC, BKL, DF, NV, ve VASC gibi terimler, cilt kanseri ve cilt lezyonları ile ilgili sınıflamaları ifade eder. Her bir tür, belirli klinik özelliklere ve tedavi yaklaşımlarına sahip olup, dermatolojik muayenelerde sıklıkla karşılaşılan terimlerdir. İşte bu türlerin detaylı açıklamaları:</p>
+
+            <h3>Bazal Hücreli Karsinom (BCC)</h3>
+            <p>Bazal hücreli karsinom, cilt kanserinin en yaygın türüdür ve cildin bazal hücrelerinden kaynaklanır. Genellikle yavaş büyür ve vücutta baş, boyun, eller gibi güneşe maruz kalan bölgelerde sıklıkla görülür. BCC nadiren metastaz yapar, ancak tedavi edilmezse çevre dokulara yayılabilir ve deformasyonlara yol açabilir. Erken evrelerde cerrahi müdahale ile başarılı bir şekilde tedavi edilebilir.</p>
+
+            <h3>Skuamöz Hücreli Karsinom (SCC)</h3>
+            <p>Skuamöz hücreli karsinom, cildin üst katmanındaki skuamöz hücrelerden kaynaklanır. BCC'ye kıyasla daha agresif bir seyir izler ve çevre dokulara yayılma riski daha yüksektir. SCC, genellikle güneşe maruz kalan bölgelerde ve eski yara izlerinde gelişir. Erken teşhis ve tedavi ile prognoz iyi olsa da, ilerlemiş vakalar ciddi sağlık sorunlarına yol açabilir.</p>
+
+            <h3>Melanom</h3>
+            <p>Malign melanom, cilt kanserinin en tehlikeli ve ölümcül türüdür. Pigment üretimi yapan melanosit hücrelerinden gelişir ve genellikle ciltteki mevcut benler üzerinde başlar. Melanom, hızla büyüyebilir ve vücudun diğer organlarına metastaz yapabilir. Melanom, nadir görülen bir kanser türü olmasına rağmen, diğer cilt kanseri türlerine göre daha ölümcül sonuçlar doğurabilir. Erken tanı, tedavi şansını artırmak için hayati önem taşır.</p>
+
+            <h3>Aktinik Keratoz ve ˙Invaziv Yassı Hücreli Kanser (AKIEC)</h3>
+            <p>AKIEC, genellikle ciltte görülen atypik keratoz lezyonlarını ifade eder. Bu lezyonlar, kanser öncesi değişiklikler olarak kabul edilebilir ve bazen invaziv kanserlere dönüşebilir. AKIEC, ciltteki keratinosit hücrelerinden kaynaklanır ve genellikle güneşe maruz kalan bölgelerde ortaya çıkar. Bu lezyonların erken dönemde tespiti, ilerlemesini engellemek için önemlidir.</p>
+
+            <h3>İyi Huylu Keratoz Benzeri Lezyonlar (BKL)</h3>
+            <p>BKL, iyi huylu keratoz lezyonlarını tanımlar ve genellikle yaşlanma ile ilişkili olarak ciltte ortaya çıkar. BKL'ler, kansere dönüşmeyen, ancak bazen ciltte rahatsızlık yaratabilecek kabarık, pürüzlü bölgeler olabilir. Bu tür lezyonlar çoğunlukla zararsızdır, ancak benzer görünüme sahip malign lezyonlar ile karışabilir, bu yüzden dermatolojik değerlendirme önemlidir.</p>
+
+            <h3>Dermatofibrom (DF)</h3>
+            <p>Dermal fibromalar, derideki bağ dokusundan kaynaklanan benign tümörlerdir. Genellikle deri altında yuvarlak, sert nodüller olarak hissedilirler. DF, kanseröz değildir ve genellikle kozmetik bir sorun oluşturur. Ancak büyük veya çok sayıda dermal fibromaya sahip olmak, bazen ciltte başka sağlık sorunlarının belirtisi olabilir.</p>
+
+            <h3>Melanositik Nevüsler (NV)</h3>
+            <p>Nevus, halk arasında "ben" olarak bilinen, deri üzerinde görülen pigmentli lezyonlardır. Nevuslar genellikle doğuştan gelir veya çocukluk döneminde gelişir. Çoğu nevus, kanseröz olmayan benign lezyonlardır. Ancak, bazı nevuslar malign melanoma dönüşebilir, bu yüzden düzenli olarak izlenmeleri ve değişiklik gösteren benlerin dermatolog tarafından değerlendirilmesi önemlidir.</p>
+
+            <h3>Vasküler Lezyonlar (VASC)</h3>
+            <p>Vasküler lezyonlar, damar yapılarından gelişen iyi veya kötü huyu lezyonlardır. Ciltte görülen vasküler lezyonlar arasında en yaygın olanı hemangiomalardır. Hemangiomalar genellikle bebeklik döneminde ortaya çıkar ve çoğunlukla zararsızdır. Ancak, bazı vasküler tümörler malign özellikler gösterebilir ve tedavi edilmesi gerekebilir.</p>
+
+        </div>
+
+    </main>
+    <footer>
+        <p>©2024 Cilt Kanseri Teşhisi</p>
+    </footer>
+
+    <script>
+        // Bölüm geçişini kontrol eden fonksiyon
+        function showContent(contentId) {
+            // Tüm bölümleri gizle
+            document.getElementById('ciltKanseri').style.display = 'none';
+            document.getElementById('kanserTurleri').style.display = 'none';
+            document.getElementById('analizor').style.display = 'none';
+    
+            // İlgili bölümü göster
+            document.getElementById(contentId).style.display = 'block';
+        }
+    
+      // Form gönderimini yakala
+            document.getElementById('uploadForm').addEventListener('submit', function (e) {
+                e.preventDefault(); // Formun normal şekilde gönderilmesini engelle
+
+                const fileInput = document.getElementById('fileInput'); // Dosya input elemanını al
+                const formData = new FormData(); // Form verilerini oluştur
+                formData.append('file', fileInput.files[0]); // Yüklenen dosyayı formData'ya ekle
+
+                // REST API isteği gönder
+                fetch('http://127.0.0.1:5000/api/predict', { // REST API endpoint URL'sini kullan
+                    method: 'POST',
+                    body: formData // Form verilerini POST isteği olarak gönder
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error); // Hata mesajını göster
+                    } else {
+                        const prediction = document.getElementById('prediction');
+                        const uploadedImage = document.getElementById('uploadedImage');
+                        const infoBox = document.getElementById('info-box'); // Bilgilendirme kutusu
+
+                        // Tahmin sonucunu göster
+                        prediction.style.display = 'block';
+                        if (data.message) {
+                            prediction.textContent = data.message;
+                        } else {
+                            prediction.textContent = `Tahmin: ${data.label} (${data.confidence})`;
+                        }
+
+                        // Yüklenen görseli değiştir
+                        if (data.file_path) {
+                            uploadedImage.src = `http://127.0.0.1:5000${data.file_path}`;
+                        }
+
+                        // Kanser türü bilgisi ekle
+                        if (data.info) {
+                            infoBox.textContent = data.info;
+                            infoBox.style.display = 'block';
+                        }
+                    }
+                })
+
+                .catch(error => {
+                    // Hata olduğunda hata mesajını göster
+                    const errorElement = document.getElementById('error-message'); // Hata mesajı göstermek için bir element
+                    errorElement.textContent = 'Yükleme sırasında bir hata oluştu. Lütfen tekrar deneyin.';
+                    errorElement.style.display = 'block';
+                    console.error('Hata:', error); // Konsolda hata detaylarını yazdır
+                });
+            });
+
+
+    </script>
+    
+</body>
+</html>
